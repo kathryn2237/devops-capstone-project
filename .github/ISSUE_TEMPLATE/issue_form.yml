@@ -1,0 +1,36 @@
+name: "Issue template (General)"
+description: "Use this template to describe a problem, request, or change using the project’s standard template."
+title: "[ISSUE] {{summary}}"
+labels:
+  - "triage"
+body:
+  - type: markdown
+    attributes:
+      value: |-
+        **As a** [role]  
+        **I need** [function]  
+        **So that** [benefit]
+  - type: input
+    id: summary
+    attributes:
+      label: "Short summary"
+      description: "One-line summary of the issue"
+      placeholder: "e.g. Fix failing CI job"
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: "Details and Assumptions"
+      description: "Document what you know (steps to reproduce, environment, logs)"
+      placeholder: "Provide any relevant information here"
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "Acceptance Criteria (Gherkin)"
+      description: "Provide Given/When/Then scenarios"
+      placeholder: |-
+        Given [some context]
+        When [a certain action is taken]
+        Then [the outcome is observed]
+      required: false
