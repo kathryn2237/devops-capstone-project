@@ -119,11 +119,11 @@ class TestAccountService(TestCase):
         response = self.client.post(
             BASE_URL,
             json=account.serialize(),
-            content_type="test/html"
+            content_type="text/html"
         )
         self.assertEqual(response.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
 
-   def test_get_account(self):
+    def test_get_account(self):
         """It should Read a single Account"""
         account = self._create_accounts(1)[0]
         resp = self.client.get(
@@ -138,7 +138,7 @@ class TestAccountService(TestCase):
         resp = self.client.get(f"{BASE_URL}/0")
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
 
-   def test_get_account_list(self):
+    def test_get_account_list(self):
         """It should Get a list of Accounts"""
         self._create_accounts(5)
         resp = self.client.get(BASE_URL)
